@@ -5,17 +5,15 @@ import org.jfree.ui.*;
 import java.util.*;
 
 public class LineChartRender extends ApplicationFrame {
-  //LOOK HERE
   private ImportData id = new ImportData("https://think.cs.vt.edu/corgis/datasets/csv/broadway/broadway.csv");
   
-  //STUDY THIS
   public LineChartRender() {
       super( "amt of poeple who went to a musical/play/special in Feb 2015" );        
       JFreeChart lineChart = ChartFactory.createLineChart(
          "attendance of people who attended a musical, play, or special in months in 2015.",           
          "month",            
          "number of people",            
-         createDataset(id.getData()),    //NOTICE THIS !      
+         createDataset(id.getData()),   
          PlotOrientation.VERTICAL,           
          true, true, false);
       
@@ -39,8 +37,7 @@ public class LineChartRender extends ApplicationFrame {
 
          if(year.equals("2015")){
             dataset.addValue(attendance, type, month);
-            // dataset.addValue(attendance, "Play", month);
-            // dataset.addValue(attendance, "Special", month);             
+                        
          }
       }
       return dataset; 
